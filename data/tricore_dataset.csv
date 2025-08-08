@@ -1,0 +1,456 @@
+r.asm
+"mov.aa a14, sp
+sub.a sp, #8
+movh d4, #2
+addi d4, d4, #-0x7960
+call #0x80000624"
+"st.w [a14]#-4, d2
+ld.w d15, [a14]#-4
+lt d15, d15, #1
+and d15, #0xff
+mov d2, d15
+ret "
+"mov.aa a14, sp
+sub.a sp, #8
+st.w [a14]#-4, d4
+st.w [a14]#-8, d5
+ld.w d2, [a14]#-4
+ld.w d15, [a14]#-8
+mul d15, d2
+mov d2, d15
+ret "
+"mov.aa a14, sp
+sub.a sp, #0x10
+st.w [a14]#-0xc, d4
+mov d15, #2
+st.w [a14]#-4, d15
+j #0x800004ee
+ld.w d15, [a14]#-0xc
+sh d2, d15, #-0x1f
+add d15, d2
+sha d15, #-1
+mov d2, d15
+ld.w d15, [a14]#-4
+jge d2, d15, #0x800004cc
+ld.w d4, [a14]#-0xc
+ld.w d5, [a14]#-4
+call #0x80000436"
+"mov.aa a14, sp
+sub.a sp, #0x10
+st.w [a14]#-0xc, d4
+mov d15, #2
+st.w [a14]#-4, d15
+j #0x800004ee
+ld.w d15, [a14]#-0xc
+sh d2, d15, #-0x1f
+add d15, d2
+sha d15, #-1
+mov d2, d15
+ld.w d15, [a14]#-4
+jge d2, d15, #0x800004cc
+mov d15, #1
+mov d2, d15
+ret "
+"mov d15, d2
+jz d15, #0x800004e0
+ld.w d4, [a14]#-4
+mov d5, #1
+call #0x8000046c"
+"mov d15, d2
+jz d15, #0x800004e0
+mov d15, #0
+j #0x80000506
+mov d2, d15
+ret "
+"st.w [a14]#-4, d2
+ld.w d15, [a14]#-0xc
+sh d2, d15, #-0x1f
+add d15, d2
+sha d15, #-1
+mov d2, d15
+ld.w d15, [a14]#-4
+jge d2, d15, #0x800004cc
+ld.w d4, [a14]#-0xc
+ld.w d5, [a14]#-4
+call #0x80000436"
+"st.w [a14]#-4, d2
+ld.w d15, [a14]#-0xc
+sh d2, d15, #-0x1f
+add d15, d2
+sha d15, #-1
+mov d2, d15
+ld.w d15, [a14]#-4
+jge d2, d15, #0x800004cc
+mov d15, #1
+mov d2, d15
+ret "
+"mov.aa a14, sp
+sub.a sp, #8
+st.w [a14]#-4, d4
+st.w [a14]#-8, d5
+ld.w d4, [a14]#-4
+ld.w d5, [a14]#-8
+call #0x8000041c"
+"mov d15, d2
+mov d2, d15
+ret "
+"mov.aa a14, sp
+sub.a sp, #0x18
+st.w [a14]#-0x14, d4
+mov d15, #0
+st.w [a14]#-8, d15
+mov d15, #1
+st.w [a14]#-0xc, d15
+ld.w d15, [a14]#-0x14
+jge d15, #2, #0x80000594
+mov d15, #2
+st.w [a14]#-4, d15
+j #0x800005c6
+ld.w d2, [a14]#-4
+ld.w d15, [a14]#-0x14
+jlt d2, d15, #0x8000059c
+ld.w d4, [a14]#-8
+ld.w d5, [a14]#-0xc
+call #0x8000046c"
+"mov.aa a14, sp
+sub.a sp, #0x18
+st.w [a14]#-0x14, d4
+mov d15, #0
+st.w [a14]#-8, d15
+mov d15, #1
+st.w [a14]#-0xc, d15
+ld.w d15, [a14]#-0x14
+jge d15, #2, #0x80000594
+mov d15, #2
+st.w [a14]#-4, d15
+j #0x800005c6
+ld.w d2, [a14]#-4
+ld.w d15, [a14]#-0x14
+jlt d2, d15, #0x8000059c
+ld.w d15, [a14]#-0xc
+mov d2, d15
+ret "
+"mov.aa a14, sp
+sub.a sp, #0x18
+st.w [a14]#-0x14, d4
+mov d15, #0
+st.w [a14]#-8, d15
+mov d15, #1
+st.w [a14]#-0xc, d15
+ld.w d15, [a14]#-0x14
+jge d15, #2, #0x80000594
+ld.w d15, [a14]#-0x14
+j #0x800005d6
+mov d2, d15
+ret "
+"st.w [a14]#-0x10, d2
+ld.w d15, [a14]#-0xc
+st.w [a14]#-8, d15
+ld.w d15, [a14]#-0x10
+st.w [a14]#-0xc, d15
+ld.w d15, [a14]#-4
+add d15, #1
+st.w [a14]#-4, d15
+ld.w d2, [a14]#-4
+ld.w d15, [a14]#-0x14
+jlt d2, d15, #0x8000059c
+ld.w d4, [a14]#-8
+ld.w d5, [a14]#-0xc
+call #0x8000046c"
+"st.w [a14]#-0x10, d2
+ld.w d15, [a14]#-0xc
+st.w [a14]#-8, d15
+ld.w d15, [a14]#-0x10
+st.w [a14]#-0xc, d15
+ld.w d15, [a14]#-4
+add d15, #1
+st.w [a14]#-4, d15
+ld.w d2, [a14]#-4
+ld.w d15, [a14]#-0x14
+jlt d2, d15, #0x8000059c
+ld.w d15, [a14]#-0xc
+mov d2, d15
+ret "
+"mov.aa a14, sp
+sub.a sp, #8
+st.w [a14]#-4, d4
+st.w [a14]#-8, d5
+ld.w d4, [a14]#-4
+ld.w d15, [a14]#-8
+dvinit e2, d4, d15
+dvstep e2, e2, d15
+dvstep e2, e2, d15
+dvstep e2, e2, d15
+dvstep e2, e2, d15
+dvadj e2, e2, d15
+mov d15, d3
+eq d15, d15, #0
+and d15, #0xff
+mov d2, d15
+ret "
+"mov.aa a14, sp
+sub.a sp, #8
+st.w [a14]#-4, d4
+st.w [a14]#-8, d5
+ld.w d2, [a14]#-4
+ld.w d15, [a14]#-8
+add d15, d2
+mov d2, d15
+ret "
+"mov.aa a14, sp
+sub.a sp, #0x10
+st.w [a14]#-0xc, d4
+mov d15, #0
+st.w [a14]#-8, d15
+mov d15, #0
+st.w [a14]#-4, d15
+j #0x800006bc
+ld.w d2, [a14]#-4
+ld.w d15, [a14]#-0xc
+jlt d2, d15, #0x8000063a
+ld.w d4, [a14]#-4
+call #0x800004bc"
+"mov.aa a14, sp
+sub.a sp, #0x10
+st.w [a14]#-0xc, d4
+mov d15, #0
+st.w [a14]#-8, d15
+mov d15, #0
+st.w [a14]#-4, d15
+j #0x800006bc
+ld.w d2, [a14]#-4
+ld.w d15, [a14]#-0xc
+jlt d2, d15, #0x8000063a
+ld.w d15, [a14]#-8
+mov d2, d15
+ret "
+"mov d15, d2
+ld.w d4, [a14]#-8
+mov d5, d15
+call #0x8000046c"
+"st.w [a14]#-8, d2
+ld.w d4, [a14]#-4
+call #0x8000070a"
+"mov d15, d2
+ld.w d4, [a14]#-8
+mov d5, d15
+call #0x8000046c"
+"st.w [a14]#-8, d2
+ld.w d4, [a14]#-4
+call #0x8000050a"
+"mov d15, d2
+ld.w d4, [a14]#-8
+mov d5, d15
+call #0x8000046c"
+"st.w [a14]#-8, d2
+ld.w d4, [a14]#-4
+call #0x80000572"
+"mov d15, d2
+ld.w d4, [a14]#-8
+mov d5, d15
+call #0x8000046c"
+"st.w [a14]#-8, d2
+ld.w d4, [a14]#-4
+call #0x800005da"
+"mov d15, d2
+ld.w d4, [a14]#-8
+mov d5, d15
+call #0x8000046c"
+"st.w [a14]#-8, d2
+ld.w d15, [a14]#-4
+add d15, #1
+st.w [a14]#-4, d15
+ld.w d2, [a14]#-4
+ld.w d15, [a14]#-0xc
+jlt d2, d15, #0x8000063a
+ld.w d4, [a14]#-4
+call #0x800004bc"
+"st.w [a14]#-8, d2
+ld.w d15, [a14]#-4
+add d15, #1
+st.w [a14]#-4, d15
+ld.w d2, [a14]#-4
+ld.w d15, [a14]#-0xc
+jlt d2, d15, #0x8000063a
+ld.w d15, [a14]#-8
+mov d2, d15
+ret "
+"mov.aa a14, sp
+sub.a sp, #8
+st.w [a14]#-4, d4
+st.w [a14]#-8, d5
+ld.w d2, [a14]#-4
+ld.w d15, [a14]#-8
+mul d15, d2
+mov d2, d15
+ret "
+"mov.aa a14, sp
+sub.a sp, #8
+st.w [a14]#-4, d4
+ld.w d15, [a14]#-4
+jz d15, #0x8000071e
+mov d15, #1
+j #0x8000073a
+mov d2, d15
+ret "
+"mov.aa a14, sp
+sub.a sp, #8
+st.w [a14]#-4, d4
+ld.w d15, [a14]#-4
+jz d15, #0x8000071e
+ld.w d15, [a14]#-4
+jne d15, #1, #0x80000722
+ld.w d15, [a14]#-4
+add d15, #-1
+mov d4, d15
+call #0x8000070a"
+"mov.aa a14, sp
+sub.a sp, #8
+st.w [a14]#-4, d4
+ld.w d15, [a14]#-4
+jz d15, #0x8000071e
+ld.w d15, [a14]#-4
+jne d15, #1, #0x80000722
+mov d15, #1
+j #0x8000073a
+mov d2, d15
+ret "
+"mov d15, d2
+ld.w d4, [a14]#-4
+mov d5, d15
+call #0x800006f0"
+"mov d15, d2
+mov d2, d15
+ret "
+"mov.aa a14, sp
+sub.a sp, #8
+st.w [a14]#-4, d4
+ld.w d4, [a14]#-4
+ld.w d5, [a14]#-4
+call #0x80000486"
+"mov d15, d2
+mov d2, d15
+ret "
+"mov.aa a14, sp
+sub.a sp, #0x10
+st.w [a14]#-0xc, d4
+mov d15, #0
+st.w [a14]#-8, d15
+mov d15, #1
+st.w [a14]#-4, d15
+j #0x80000610
+ld.w d15, [a14]#-4
+ld.w d2, [a14]#-0xc
+jge d2, d15, #0x800005f0
+ld.w d4, [a14]#-4
+call #0x800004a2"
+"mov.aa a14, sp
+sub.a sp, #0x10
+st.w [a14]#-0xc, d4
+mov d15, #0
+st.w [a14]#-8, d15
+mov d15, #1
+st.w [a14]#-4, d15
+j #0x80000610
+ld.w d15, [a14]#-4
+ld.w d2, [a14]#-0xc
+jge d2, d15, #0x800005f0
+ld.w d15, [a14]#-8
+mov d2, d15
+ret "
+"ld.w d15, [a14]#-8
+add d15, d2
+st.w [a14]#-8, d15
+ld.w d4, [a14]#-4
+mov d5, #1
+call #0x8000046c"
+"st.w [a14]#-4, d2
+ld.w d15, [a14]#-4
+ld.w d2, [a14]#-0xc
+jge d2, d15, #0x800005f0
+ld.w d4, [a14]#-4
+call #0x800004a2"
+"st.w [a14]#-4, d2
+ld.w d15, [a14]#-4
+ld.w d2, [a14]#-0xc
+jge d2, d15, #0x800005f0
+ld.w d15, [a14]#-8
+mov d2, d15
+ret "
+"mov.aa a14, sp
+sub.a sp, #0x18
+st.w [a14]#-0x14, d4
+mov d15, #0
+st.w [a14]#-8, d15
+mov d15, #1
+st.w [a14]#-0xc, d15
+ld.w d15, [a14]#-0x14
+jge d15, #2, #0x8000052c
+mov d15, #2
+st.w [a14]#-4, d15
+j #0x8000055e
+ld.w d2, [a14]#-4
+ld.w d15, [a14]#-0x14
+jlt d2, d15, #0x80000534
+ld.w d4, [a14]#-8
+ld.w d5, [a14]#-0xc
+call #0x8000046c"
+"mov.aa a14, sp
+sub.a sp, #0x18
+st.w [a14]#-0x14, d4
+mov d15, #0
+st.w [a14]#-8, d15
+mov d15, #1
+st.w [a14]#-0xc, d15
+ld.w d15, [a14]#-0x14
+jge d15, #2, #0x8000052c
+mov d15, #2
+st.w [a14]#-4, d15
+j #0x8000055e
+ld.w d2, [a14]#-4
+ld.w d15, [a14]#-0x14
+jlt d2, d15, #0x80000534
+ld.w d15, [a14]#-0xc
+mov d2, d15
+ret "
+"mov.aa a14, sp
+sub.a sp, #0x18
+st.w [a14]#-0x14, d4
+mov d15, #0
+st.w [a14]#-8, d15
+mov d15, #1
+st.w [a14]#-0xc, d15
+ld.w d15, [a14]#-0x14
+jge d15, #2, #0x8000052c
+ld.w d15, [a14]#-0x14
+j #0x8000056e
+mov d2, d15
+ret "
+"st.w [a14]#-0x10, d2
+ld.w d15, [a14]#-0xc
+st.w [a14]#-8, d15
+ld.w d15, [a14]#-0x10
+st.w [a14]#-0xc, d15
+ld.w d15, [a14]#-4
+add d15, #1
+st.w [a14]#-4, d15
+ld.w d2, [a14]#-4
+ld.w d15, [a14]#-0x14
+jlt d2, d15, #0x80000534
+ld.w d4, [a14]#-8
+ld.w d5, [a14]#-0xc
+call #0x8000046c"
+"st.w [a14]#-0x10, d2
+ld.w d15, [a14]#-0xc
+st.w [a14]#-8, d15
+ld.w d15, [a14]#-0x10
+st.w [a14]#-0xc, d15
+ld.w d15, [a14]#-4
+add d15, #1
+st.w [a14]#-4, d15
+ld.w d2, [a14]#-4
+ld.w d15, [a14]#-0x14
+jlt d2, d15, #0x80000534
+ld.w d15, [a14]#-0xc
+mov d2, d15
+ret "
