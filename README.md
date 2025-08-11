@@ -1,5 +1,5 @@
-# lclm_aws_marketplace_example
-This repository is contains examples of how to use the LCLM family of models.
+# AuroraLabs LOCI AWS Marketplace example
+This repository is contains examples of how to use the LOCI family of models.
 
 ## Local setup
 ```
